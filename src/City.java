@@ -67,6 +67,6 @@ public class City {
 
     @Override
     public String toString() {
-        return "City of " + name + " in " + country + " with " + nbInhabitants + " inhabitants";
+        return name + ". Pays : " + country + ". Habitants : " + nbInhabitants;
     }
 }
