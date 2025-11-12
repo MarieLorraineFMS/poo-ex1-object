@@ -6,12 +6,14 @@ public class TestCity {
 
         //////////////// PRINT //////////////////////////////
 
-        System.out.println("Toulouse -> " + toulouse.name + " / " + toulouse.country + " / " + toulouse.nbInhabitants);
-        System.out.println("Paris    -> " + paris.name + " / " + paris.country + " / " + paris.nbInhabitants);
-        System.out.println("Nice     -> " + nice.name + " / " + nice.country + " / " + nice.nbInhabitants);
+        System.out.println(
+                "Paris -> " + paris.getName() + " / " + paris.getCountry() + " / " + paris.getNbInhabitants());
+        System.out
+                .println("Nice -> " + nice.getName() + " / " + nice.getCountry() + " / " + nice.getNbInhabitants());
 
-        toulouse.nbInhabitants += 20_000;
+        toulouse.setNbInhabitants(toulouse.getNbInhabitants() + 20_000);
 
-        System.out.println("Toulouse +20k -> " + toulouse.nbInhabitants);
+        System.out.println("Toulouse add +20k inhabitants -> " + toulouse.getNbInhabitants());
+
     }
 }
