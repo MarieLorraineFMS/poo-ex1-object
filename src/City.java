@@ -13,6 +13,11 @@ public class City {
         this.nbInhabitants = Math.max(0, nbInhabitants); // no negative inhabitants
     }
 
+    // 1.3 Constructor with name & inhabitants and country defaults set to "Unknown"
+    public City(String name, int nbInhabitants) {
+        this(name, "Unknown", nbInhabitants);
+    }
+
     /////////////// GETTERS /////////////////////////
 
     public String getName() {
