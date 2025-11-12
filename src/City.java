@@ -57,4 +57,10 @@ public class City {
         }
         this.nbInhabitants = nbInhabitants;
     }
+
+    // 1.4
+    public void display() {
+        // Human readable line
+        System.out.println("City of " + name + " in " + country + " with " + nbInhabitants + " inhabitants");
+    }
 }

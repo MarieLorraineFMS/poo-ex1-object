@@ -19,9 +19,12 @@ public class TestCity {
 
         System.out.println("Toulouse add +20k inhabitants -> " + toulouse.getNbInhabitants());
 
-        // 1.3
         System.out.println(
-                "Limoges  -> " + limoges.getName() + " / " + limoges.getCountry() + " / " + limoges.getNbInhabitants());
+                "Limoges -> " + limoges.getName() + " / " + limoges.getCountry() + " / " + limoges.getNbInhabitants());
+
+        // 1.4
+        System.out.print("1.4 display Toulouse : ");
+        toulouse.display();
 
     }
 }
