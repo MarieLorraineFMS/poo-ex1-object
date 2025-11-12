@@ -3,6 +3,8 @@ public class Person {
     private String firstName; // required
     private int age; // >= 0
     private String address;
+    private String sex;
+    private City birthCity;
 
     ////////////// CONSTRUCTOR ////////////////////////////////////////////////
 
@@ -12,6 +14,14 @@ public class Person {
         this.firstName = (firstName == null || firstName.isBlank()) ? "Unknown" : firstName;
         this.age = Math.max(0, age); // never negative
         this.address = (address == null || address.isBlank()) ? "Unknown address" : address;
+        this.birthCity = new City("Unknown", "Unknown", 0);
+    }
+
+    public Person(String lastName, String firstName, int age, String address, City birthCity) {
+        this(lastName, firstName, age, address);
+        if (birthCity != null) {
+            this.birthCity = birthCity;
+        }
     }
 
     ///////////// GETTERS ////////////////////////////////////////////////////
@@ -30,6 +40,10 @@ public class Person {
 
     public String getAddress() {
         return address;
+    }
+
+    public City getBirthCity() {
+        return birthCity;
     }
 
     ///////////// SETTERS ////////////////////////////////////////////////////
@@ -54,14 +68,21 @@ public class Person {
             this.address = address;
     }
 
+    public void setBirthCity(City birthCity) {
+        if (birthCity != null) {
+            this.birthCity = birthCity;
+        }
+    }
+
     ////////// PRINT /////////////////////////////////////////////
 
     public void display() {
-        System.out.println(firstName + " " + lastName + " , " + age + " ans. Demeurant :  " + address);
+        System.out.println(this);
     }
 
     @Override
     public String toString() {
-        return firstName + " " + lastName + " , " + age + " ans. Demeurant :  " + address;
+        return firstName + " " + lastName + " , " + age + " ans. Demeurant : " + address
+                + ". Né à : " + birthCity.toString();
     }
 }
