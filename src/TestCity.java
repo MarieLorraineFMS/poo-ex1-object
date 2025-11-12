@@ -23,8 +23,12 @@ public class TestCity {
                 "Limoges -> " + limoges.getName() + " / " + limoges.getCountry() + " / " + limoges.getNbInhabitants());
 
         // 1.4
-        System.out.print("1.4 display Toulouse : ");
+        System.out.print("1.4 Display Toulouse : ");
         toulouse.display();
+
+        // 1.5
+        // Without toString() method, it prints class name & @hashcode
+        System.out.println("1.5 Print Toulouse: " + toulouse);
 
     }
 }
