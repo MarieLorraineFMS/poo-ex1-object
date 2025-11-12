@@ -1,9 +1,11 @@
 public class City {
 
-    // Encapsulated 1.2
     private String name;
     private String country;
     private int nbInhabitants;
+
+    // 1.7 Counter
+    private static int cityCounter = 0;
 
     /////////////// CONSTRUCTOR /////////////////////
 
@@ -11,9 +13,9 @@ public class City {
         this.name = (name == null || name.isBlank()) ? "Unknown" : name; // no empty name
         this.country = (country == null || country.isBlank()) ? "Unknown" : country; // no empty country
         this.nbInhabitants = Math.max(0, nbInhabitants); // no negative inhabitants
+        cityCounter++; // 1.7 Increment on each creation
     }
 
-    // 1.3 Constructor with name & inhabitants and country defaults set to "Unknown"
     public City(String name, int nbInhabitants) {
         this(name, "Unknown", nbInhabitants);
     }
@@ -30,6 +32,11 @@ public class City {
 
     public int getNbInhabitants() {
         return nbInhabitants;
+    }
+
+    // 1.7
+    public static int getCityCount() {
+        return cityCounter;
     }
 
     /////////////// SETTERS /////////////////////////
@@ -58,7 +65,6 @@ public class City {
         this.nbInhabitants = nbInhabitants;
     }
 
-    // 1.6
     @Override
     public String toString() {
         return "City of " + name + " in " + country + " with " + nbInhabitants + " inhabitants";
